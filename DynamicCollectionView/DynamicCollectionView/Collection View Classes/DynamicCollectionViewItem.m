@@ -107,7 +107,7 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
 {
-    if (object == self) {
+    if (object == self.textField) {
         if ([keyPath isEqualToString:@"stringValue"]) {
             if (self.currentDetailView == self.largeView)
                 self.largeViewTextField.stringValue = self.textField.stringValue;

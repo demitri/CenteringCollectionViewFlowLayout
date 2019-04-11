@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
         <capability name="System colors introduced in macOS 10.13" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -36,7 +37,6 @@
                 <outlet property="miniView" destination="ifF-su-riL" id="1Uc-yY-oOD"/>
                 <outlet property="miniViewTextField" destination="sZ4-Hx-88I" id="yp8-Tt-4xO"/>
                 <outlet property="miniWidthConstraint" destination="08m-lv-Pau" id="kfq-DR-gyF"/>
-                <outlet property="textField" destination="sZ4-Hx-88I" id="y1V-6K-z1M"/>
                 <outlet property="view" destination="c22-O7-iKe" id="W4N-Ju-BuY"/>
             </connections>
         </collectionViewItem>
@@ -59,6 +59,9 @@
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
+                    <connections>
+                        <binding destination="bbf-jZ-EC8" name="value" keyPath="values" id="tQq-5P-IHz"/>
+                    </connections>
                 </textField>
             </subviews>
             <constraints>
