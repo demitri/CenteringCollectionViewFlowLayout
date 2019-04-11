@@ -66,6 +66,9 @@
                                                                  
                                                                  [self.collectionView.collectionViewLayout invalidateLayout];
                                                                  
+                                                                 if (self.useSingleCollectionItemCheckbox.state == NSOnState)
+                                                                     [self.collectionView reloadData];
+                                                                 
                                                                  //[self.collectionView reloadItemsAtIndexPaths:self.allIndexPaths];
                                                              }
                                                          }];
@@ -83,7 +86,7 @@
 
 }
 
-#pragma mark -
+#pragma mark - IBAction methods
 
 - (void)defaultLayoutAction:(id)sender
 {
@@ -115,6 +118,11 @@
     [self.collectionView.collectionViewLayout invalidateLayout];
 }
 
+- (IBAction)swapItemClassAction:(id)sender
+{
+    [self.collectionView reloadData];
+}
+
 #pragma mark - NSCollectionViewDataSource methods
 
 - (NSInteger)collectionView:(NSCollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -128,14 +136,22 @@
     
     NSLog(@"mini=%d, path=%@ w=%0.1f", displayMiniItems, indexPath, self.collectionView.frame.size.width);
     
-    NSCollectionViewItem *item = [collectionView makeItemWithIdentifier:@"DynamicCollectionViewItem"
-                                                           forIndexPath:indexPath];
-    item.textField.stringValue = [NSString stringWithFormat:@"Item %lu", [indexPath indexAtPosition:1]];
+    NSString *identifier;
+    NSCollectionViewItem *item;
     
+    if (self.useSingleCollectionItemCheckbox.state == NSOnState) {
+        identifier = displayMiniItems ? @"MiniViewItem" : @"LargeViewItem";
+    } else {
+        identifier = @"DynamicCollectionViewItem";
+    }
+    item = [collectionView makeItemWithIdentifier:identifier
+                                     forIndexPath:indexPath];
     NSAssert(item != nil, @"Could not make NSCollectionViewItem.");
-    
-    // TODO: populate the specifics of the view here
-    
+
+    // populate the specifics of each view here
+
+    item.textField.stringValue = [NSString stringWithFormat:@"Item %lu", [indexPath indexAtPosition:1]];
+
     return item;
 }
 
@@ -143,7 +159,7 @@
 
 - (NSSize)collectionView:(NSCollectionView *)collectionView layout:(NSCollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    // hard coded here, but would be better based on MyCollectionViewItem
+    // hard coded here, but would be better based on "DynamicCollectionViewItem" object
     if (displayMiniItems)
         return NSMakeSize(100, 222); // w, h
     else

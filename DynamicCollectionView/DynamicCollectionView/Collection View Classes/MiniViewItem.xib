@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <capability name="System colors introduced in macOS 10.13" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="MiniViewItem"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView wantsLayer="YES" id="muT-FK-ipx" userLabel="Mini View" customClass="ColorView">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="218"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView wantsLayer="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MZh-xg-oMM">
+                    <rect key="frame" x="0.0" y="118" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="2dL-nh-vY1"/>
+                        <constraint firstAttribute="height" constant="100" id="Cl0-CQ-fRC"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="NSComputer" id="hcS-D5-Nzs"/>
+                </imageView>
+                <textField wantsLayer="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1sM-pc-3pT">
+                    <rect key="frame" x="32" y="81" width="37" height="17"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="cvF-gJ-oVk">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="1sM-pc-3pT" firstAttribute="top" secondItem="MZh-xg-oMM" secondAttribute="bottom" constant="20" id="EVP-qD-u85"/>
+                <constraint firstAttribute="trailing" secondItem="MZh-xg-oMM" secondAttribute="trailing" id="Q3y-fS-Y91"/>
+                <constraint firstItem="1sM-pc-3pT" firstAttribute="centerX" secondItem="muT-FK-ipx" secondAttribute="centerX" id="XYV-M5-ADX"/>
+                <constraint firstItem="MZh-xg-oMM" firstAttribute="leading" secondItem="muT-FK-ipx" secondAttribute="leading" id="iH3-W1-f4M"/>
+                <constraint firstItem="MZh-xg-oMM" firstAttribute="top" secondItem="muT-FK-ipx" secondAttribute="top" id="x6E-RK-s9V"/>
+            </constraints>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                    <color key="value" name="findHighlightColor" catalog="System" colorSpace="catalog"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="495" y="249"/>
+        </customView>
+        <collectionViewItem id="Di8-as-2HL">
+            <connections>
+                <outlet property="textField" destination="1sM-pc-3pT" id="L0a-YF-hwJ"/>
+                <outlet property="view" destination="muT-FK-ipx" id="OaR-X4-gwe"/>
+            </connections>
+        </collectionViewItem>
+    </objects>
+    <resources>
+        <image name="NSComputer" width="32" height="32"/>
+    </resources>
+</document>

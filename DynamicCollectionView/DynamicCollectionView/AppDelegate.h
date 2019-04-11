@@ -12,8 +12,10 @@
 @property (nonatomic, copy) NSNumber *itemCount; // no. of items in collection; can be updated in window
 @property (nonatomic, weak) IBOutlet NSCollectionView *collectionView;
 @property (nonatomic, strong) IBOutlet NSCollectionViewFlowLayout *customLayout;
+@property (nonatomic, strong) IBOutlet NSButton *useSingleCollectionItemCheckbox;
 
 - (IBAction)defaultLayoutAction:(id)sender;
+- (IBAction)swapItemClassAction:(id)sender;
 
 @end
 

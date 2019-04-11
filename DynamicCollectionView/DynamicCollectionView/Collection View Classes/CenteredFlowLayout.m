@@ -1,6 +1,5 @@
 //
 //  CenteredFlowLayout.m
-//  DynamicCollectionView
 //
 //  Created by Demitri Muna on 4/10/19.
 //
@@ -41,7 +40,12 @@
     NSUInteger indices[] = {0,0};
     NSCollectionViewLayoutAttributes *attr = [super layoutAttributesForItemAtIndexPath:[NSIndexPath indexPathWithIndexes:indices length:2]];
     itemWidth = attr.size.width;
-    NSEdgeInsets insets = self.sectionInset;
+    
+    NSEdgeInsets insets;
+    if ([delegate respondsToSelector:@selector(collectionView:layout:insetForSectionAtIndex:)])
+        insets = [delegate collectionView:cv layout:self insetForSectionAtIndex:0];
+    else
+        insets = self.sectionInset;
 
     // calculate the number of columns that can fit excluding minimumInteritemSpacing:
     nColumns = floor((cv.frame.size.width - insets.left - insets.right) / itemWidth);

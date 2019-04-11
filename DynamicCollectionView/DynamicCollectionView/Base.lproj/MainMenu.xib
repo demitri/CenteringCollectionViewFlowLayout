@@ -11,11 +11,13 @@
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
-        <customObject id="-3" userLabel="Application"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
                 <outlet property="collectionView" destination="mes-gj-Dao" id="hGU-BU-URd"/>
+                <outlet property="collectionViewWidthConstraint" destination="FpW-qR-sKq" id="x16-4o-M3w"/>
                 <outlet property="customLayout" destination="h2i-tI-VYV" id="mYI-dU-99u"/>
+                <outlet property="useSingleCollectionItemCheckbox" destination="lJY-xT-vZO" id="Z9L-J5-F3X"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -734,7 +736,7 @@
                         </textFieldCell>
                     </textField>
                     <button wantsLayer="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SDe-Cc-eYh">
-                        <rect key="frame" x="271" y="331" width="191" height="18"/>
+                        <rect key="frame" x="271" y="340" width="191" height="18"/>
                         <buttonCell key="cell" type="check" title="Default NSCollectionViewLayout" bezelStyle="regularSquare" imagePosition="left" controlSize="small" inset="2" id="lkt-ol-eJ1">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="smallSystem"/>
@@ -760,15 +762,27 @@
                             <binding destination="Voe-Tx-rLC" name="value" keyPath="self.itemCount" id="RnM-hy-DpI"/>
                         </connections>
                     </textField>
+                    <button wantsLayer="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lJY-xT-vZO">
+                        <rect key="frame" x="271" y="322" width="197" height="18"/>
+                        <buttonCell key="cell" type="check" title="Use Single NSCollectionViewItem" bezelStyle="regularSquare" imagePosition="left" controlSize="small" inset="2" id="bvG-93-AcD">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="smallSystem"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="swapItemClassAction:" target="Voe-Tx-rLC" id="vof-iH-9ES"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="Hm8-pO-px1" secondAttribute="trailing" id="Aih-ln-fbK"/>
                     <constraint firstItem="0bc-lg-cfp" firstAttribute="firstBaseline" secondItem="pjC-tC-GQs" secondAttribute="firstBaseline" id="BGV-GS-y63"/>
                     <constraint firstItem="Hm8-pO-px1" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" id="CY0-Fa-ddn"/>
+                    <constraint firstItem="SDe-Cc-eYh" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="5" id="L1w-Nc-8EH"/>
                     <constraint firstItem="pjC-tC-GQs" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="Mha-8i-Xs2"/>
                     <constraint firstItem="0bc-lg-cfp" firstAttribute="leading" secondItem="pjC-tC-GQs" secondAttribute="trailing" constant="10" id="PCs-r8-3CB"/>
-                    <constraint firstItem="SDe-Cc-eYh" firstAttribute="firstBaseline" secondItem="0bc-lg-cfp" secondAttribute="firstBaseline" id="XoX-0d-31k"/>
+                    <constraint firstItem="lJY-xT-vZO" firstAttribute="leading" secondItem="SDe-Cc-eYh" secondAttribute="leading" id="YtQ-VJ-nVg"/>
                     <constraint firstAttribute="bottom" secondItem="Hm8-pO-px1" secondAttribute="bottom" id="ZYI-kY-USh"/>
+                    <constraint firstItem="lJY-xT-vZO" firstAttribute="top" secondItem="SDe-Cc-eYh" secondAttribute="bottom" constant="6" id="huP-1m-GGs"/>
                     <constraint firstItem="pjC-tC-GQs" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="13" id="kRR-d9-9hI"/>
                     <constraint firstAttribute="trailing" secondItem="SDe-Cc-eYh" secondAttribute="trailing" constant="20" id="w6A-sN-h2D"/>
                     <constraint firstItem="Hm8-pO-px1" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="40" id="xrr-NI-nyy"/>

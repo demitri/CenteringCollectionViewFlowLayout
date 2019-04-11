@@ -1,20 +1,20 @@
 //
-//  MyCollectionViewItem.m
+//  DynamicCollectionViewItem.m
 //  DynamicCollectionView
 //
 //  Created by Demitri Muna on 4/9/19.
 //
 
-#import "MyCollectionViewItem.h"
+#import "DynamicCollectionViewItem.h"
 
-@interface MyCollectionViewItem()
+@interface DynamicCollectionViewItem()
 @property (nonatomic, strong) NSView *currentDetailView;
 @property (nonatomic, strong) id collectionViewFrameChangeObserver;
 @end
 
 #pragma mark -
 
-@implementation MyCollectionViewItem
+@implementation DynamicCollectionViewItem
 
 - (void)awakeFromNib
 {
@@ -57,7 +57,15 @@
 
                                                          }
                                               ];
-    
+ 
+    // Since we are swapping the views based on the item size, we can't just bind values directly.
+    // We could set and unset the bindings progamatically, or just observe changes via KVO and update
+    // as appropriate.
+    [self.textField addObserver:self
+                     forKeyPath:@"stringValue"
+                        options:NSKeyValueObservingOptionNew
+                        context:nil];
+
 }
 
 - (void)dealloc
@@ -68,6 +76,8 @@
         if (self.collectionViewFrameChangeObserver)
             [[NSNotificationCenter defaultCenter] removeObserver:self.collectionViewFrameChangeObserver];
     }
+    
+    [self removeObserver:self forKeyPath:@"textField.stringValue"];
 }
 
 - (void)makeDetailView:(NSView*)newView
@@ -91,6 +101,20 @@
                                                          multiplier:1.0
                                                            constant:0.0]];
     self.currentDetailView = newView;
+}
+
+#pragma mark -
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
+{
+    if (object == self) {
+        if ([keyPath isEqualToString:@"stringValue"]) {
+            if (self.currentDetailView == self.largeView)
+                self.largeViewTextField.stringValue = self.textField.stringValue;
+            else
+                self.miniViewTextField.stringValue = self.textField.stringValue;
+        }
+    }
 }
 
 @end

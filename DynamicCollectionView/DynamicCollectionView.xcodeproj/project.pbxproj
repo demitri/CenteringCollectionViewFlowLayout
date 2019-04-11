@@ -11,10 +11,14 @@
 		A6DC24EB225D744900784D54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6DC24EA225D744900784D54 /* Assets.xcassets */; };
 		A6DC24EE225D744900784D54 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6DC24EC225D744900784D54 /* MainMenu.xib */; };
 		A6DC24F1225D744900784D54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DC24F0225D744900784D54 /* main.m */; };
-		A6DC24FA225D748C00784D54 /* MyCollectionViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DC24F9225D748C00784D54 /* MyCollectionViewItem.m */; };
+		A6DC24FA225D748C00784D54 /* DynamicCollectionViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DC24F9225D748C00784D54 /* DynamicCollectionViewItem.m */; };
 		A6DC24FC225D74BB00784D54 /* DynamicCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6DC24FB225D74BB00784D54 /* DynamicCollectionViewItem.xib */; };
 		A6DC24FF225D760A00784D54 /* ColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DC24FE225D760A00784D54 /* ColorView.m */; };
 		A6DC2502225E5CDB00784D54 /* CenteredFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DC2501225E5CDB00784D54 /* CenteredFlowLayout.m */; };
+		A6DC2507225EF6FC00784D54 /* LargeViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DC2505225EF6FC00784D54 /* LargeViewItem.m */; };
+		A6DC2508225EF6FC00784D54 /* LargeViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6DC2506225EF6FC00784D54 /* LargeViewItem.xib */; };
+		A6DC250C225EF70700784D54 /* MiniViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DC250A225EF70700784D54 /* MiniViewItem.m */; };
+		A6DC250D225EF70700784D54 /* MiniViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6DC250B225EF70700784D54 /* MiniViewItem.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,13 +30,19 @@
 		A6DC24EF225D744900784D54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6DC24F0225D744900784D54 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A6DC24F2225D744900784D54 /* DynamicCollectionView.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DynamicCollectionView.entitlements; sourceTree = "<group>"; };
-		A6DC24F8225D748C00784D54 /* MyCollectionViewItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyCollectionViewItem.h; sourceTree = "<group>"; };
-		A6DC24F9225D748C00784D54 /* MyCollectionViewItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCollectionViewItem.m; sourceTree = "<group>"; };
+		A6DC24F8225D748C00784D54 /* DynamicCollectionViewItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicCollectionViewItem.h; sourceTree = "<group>"; };
+		A6DC24F9225D748C00784D54 /* DynamicCollectionViewItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicCollectionViewItem.m; sourceTree = "<group>"; };
 		A6DC24FB225D74BB00784D54 /* DynamicCollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DynamicCollectionViewItem.xib; sourceTree = "<group>"; };
 		A6DC24FD225D760A00784D54 /* ColorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorView.h; sourceTree = "<group>"; };
 		A6DC24FE225D760A00784D54 /* ColorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorView.m; sourceTree = "<group>"; };
 		A6DC2500225E5CDB00784D54 /* CenteredFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CenteredFlowLayout.h; sourceTree = "<group>"; };
 		A6DC2501225E5CDB00784D54 /* CenteredFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CenteredFlowLayout.m; sourceTree = "<group>"; };
+		A6DC2504225EF6FC00784D54 /* LargeViewItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LargeViewItem.h; sourceTree = "<group>"; };
+		A6DC2505225EF6FC00784D54 /* LargeViewItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LargeViewItem.m; sourceTree = "<group>"; };
+		A6DC2506225EF6FC00784D54 /* LargeViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LargeViewItem.xib; sourceTree = "<group>"; };
+		A6DC2509225EF70700784D54 /* MiniViewItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MiniViewItem.h; sourceTree = "<group>"; };
+		A6DC250A225EF70700784D54 /* MiniViewItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MiniViewItem.m; sourceTree = "<group>"; };
+		A6DC250B225EF70700784D54 /* MiniViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MiniViewItem.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,20 +77,34 @@
 			children = (
 				A6DC24E7225D744600784D54 /* AppDelegate.h */,
 				A6DC24E8225D744600784D54 /* AppDelegate.m */,
-				A6DC24EA225D744900784D54 /* Assets.xcassets */,
 				A6DC24EC225D744900784D54 /* MainMenu.xib */,
-				A6DC24F8225D748C00784D54 /* MyCollectionViewItem.h */,
-				A6DC24F9225D748C00784D54 /* MyCollectionViewItem.m */,
-				A6DC24FB225D74BB00784D54 /* DynamicCollectionViewItem.xib */,
+				A6DC2503225EF6C500784D54 /* Collection View Classes */,
 				A6DC24FD225D760A00784D54 /* ColorView.h */,
 				A6DC24FE225D760A00784D54 /* ColorView.m */,
-				A6DC2500225E5CDB00784D54 /* CenteredFlowLayout.h */,
-				A6DC2501225E5CDB00784D54 /* CenteredFlowLayout.m */,
+				A6DC24EA225D744900784D54 /* Assets.xcassets */,
 				A6DC24EF225D744900784D54 /* Info.plist */,
 				A6DC24F0225D744900784D54 /* main.m */,
 				A6DC24F2225D744900784D54 /* DynamicCollectionView.entitlements */,
 			);
 			path = DynamicCollectionView;
+			sourceTree = "<group>";
+		};
+		A6DC2503225EF6C500784D54 /* Collection View Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A6DC2500225E5CDB00784D54 /* CenteredFlowLayout.h */,
+				A6DC2501225E5CDB00784D54 /* CenteredFlowLayout.m */,
+				A6DC24F8225D748C00784D54 /* DynamicCollectionViewItem.h */,
+				A6DC24F9225D748C00784D54 /* DynamicCollectionViewItem.m */,
+				A6DC24FB225D74BB00784D54 /* DynamicCollectionViewItem.xib */,
+				A6DC2504225EF6FC00784D54 /* LargeViewItem.h */,
+				A6DC2505225EF6FC00784D54 /* LargeViewItem.m */,
+				A6DC2506225EF6FC00784D54 /* LargeViewItem.xib */,
+				A6DC2509225EF70700784D54 /* MiniViewItem.h */,
+				A6DC250A225EF70700784D54 /* MiniViewItem.m */,
+				A6DC250B225EF70700784D54 /* MiniViewItem.xib */,
+			);
+			path = "Collection View Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,9 +163,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6DC250D225EF70700784D54 /* MiniViewItem.xib in Resources */,
 				A6DC24EB225D744900784D54 /* Assets.xcassets in Resources */,
 				A6DC24FC225D74BB00784D54 /* DynamicCollectionViewItem.xib in Resources */,
 				A6DC24EE225D744900784D54 /* MainMenu.xib in Resources */,
+				A6DC2508225EF6FC00784D54 /* LargeViewItem.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,8 +181,10 @@
 				A6DC2502225E5CDB00784D54 /* CenteredFlowLayout.m in Sources */,
 				A6DC24FF225D760A00784D54 /* ColorView.m in Sources */,
 				A6DC24F1225D744900784D54 /* main.m in Sources */,
-				A6DC24FA225D748C00784D54 /* MyCollectionViewItem.m in Sources */,
+				A6DC24FA225D748C00784D54 /* DynamicCollectionViewItem.m in Sources */,
 				A6DC24E9225D744600784D54 /* AppDelegate.m in Sources */,
+				A6DC2507225EF6FC00784D54 /* LargeViewItem.m in Sources */,
+				A6DC250C225EF70700784D54 /* MiniViewItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +325,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = io.nightlight.DynamicCollectionView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -314,6 +343,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = io.nightlight.DynamicCollectionView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

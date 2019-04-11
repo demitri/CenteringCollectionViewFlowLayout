@@ -28,7 +28,7 @@
             </constraints>
             <point key="canvasLocation" x="164" y="-63"/>
         </customView>
-        <collectionViewItem id="AVq-hq-w7h" customClass="MyCollectionViewItem">
+        <collectionViewItem id="AVq-hq-w7h" customClass="DynamicCollectionViewItem">
             <connections>
                 <outlet property="largeView" destination="51g-bZ-2Lk" id="4Ph-gX-d2p"/>
                 <outlet property="largeViewTextField" destination="PcL-s7-PAK" id="kPE-4L-4tX"/>

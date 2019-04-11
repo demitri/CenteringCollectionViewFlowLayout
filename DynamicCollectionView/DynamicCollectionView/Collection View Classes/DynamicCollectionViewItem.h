@@ -1,5 +1,5 @@
 //
-//  MyCollectionViewItem.h
+//  DynamicCollectionViewItem.h
 //  DynamicCollectionView
 //
 //  Created by Demitri Muna on 4/9/19.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MyCollectionViewItem : NSCollectionViewItem
+@interface DynamicCollectionViewItem : NSCollectionViewItem
 
 @property (nonatomic, strong) IBOutlet ColorView *largeView;
 @property (nonatomic, strong) IBOutlet ColorView *miniView;

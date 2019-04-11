@@ -59,6 +59,7 @@
 
 - (BOOL)isFlipped
 {
+    // place origin at upper left corner
     return YES;
 }
 

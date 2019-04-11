@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="LargeViewItem"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView wantsLayer="YES" id="TrW-vh-oBh" userLabel="Large View" customClass="ColorView">
+            <rect key="frame" x="0.0" y="0.0" width="250" height="410"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView wantsLayer="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hzb-iZ-ecW">
+                    <rect key="frame" x="0.0" y="160" width="250" height="250"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="250" id="4sa-kE-bU7"/>
+                        <constraint firstAttribute="width" constant="250" id="wnG-Xz-kvP"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="NSComputer" id="Q4V-ta-7aC"/>
+                </imageView>
+                <textField wantsLayer="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eqa-dF-g4z">
+                    <rect key="frame" x="83" y="84" width="85" height="42"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="M2X-NG-Ynf">
+                        <font key="font" metaFont="system" size="35"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="eqa-dF-g4z" firstAttribute="top" secondItem="Hzb-iZ-ecW" secondAttribute="bottom" constant="34" id="960-4a-MEb"/>
+                <constraint firstItem="Hzb-iZ-ecW" firstAttribute="leading" secondItem="TrW-vh-oBh" secondAttribute="leading" id="Jzi-dv-x50"/>
+                <constraint firstAttribute="trailing" secondItem="Hzb-iZ-ecW" secondAttribute="trailing" id="Uuv-fG-leL"/>
+                <constraint firstItem="eqa-dF-g4z" firstAttribute="centerX" secondItem="TrW-vh-oBh" secondAttribute="centerX" id="W4R-b3-luX"/>
+                <constraint firstItem="Hzb-iZ-ecW" firstAttribute="top" secondItem="TrW-vh-oBh" secondAttribute="top" id="lbY-eT-338"/>
+            </constraints>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                    <color key="value" name="linkColor" catalog="System" colorSpace="catalog"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="135" y="333"/>
+        </customView>
+        <collectionViewItem id="qcf-e8-Qlr">
+            <connections>
+                <outlet property="textField" destination="eqa-dF-g4z" id="KZm-b2-lH2"/>
+                <outlet property="view" destination="TrW-vh-oBh" id="1bf-87-Td2"/>
+            </connections>
+        </collectionViewItem>
+    </objects>
+    <resources>
+        <image name="NSComputer" width="32" height="32"/>
+    </resources>
+</document>
