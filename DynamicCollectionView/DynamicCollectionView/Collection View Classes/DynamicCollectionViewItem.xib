@@ -59,9 +59,6 @@
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
-                    <connections>
-                        <binding destination="bbf-jZ-EC8" name="value" keyPath="values" id="tQq-5P-IHz"/>
-                    </connections>
                 </textField>
             </subviews>
             <constraints>
@@ -73,7 +70,7 @@
             </constraints>
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
-                    <color key="value" name="linkColor" catalog="System" colorSpace="catalog"/>
+                    <color key="value" name="selectedTextBackgroundColor" catalog="System" colorSpace="catalog"/>
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
             <point key="canvasLocation" x="135" y="333"/>
@@ -97,6 +94,9 @@
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
+                    <connections>
+                        <binding destination="AVq-hq-w7h" name="value" keyPath="self.textField.stringValue" id="Wjg-7I-Skh"/>
+                    </connections>
                 </textField>
             </subviews>
             <constraints>

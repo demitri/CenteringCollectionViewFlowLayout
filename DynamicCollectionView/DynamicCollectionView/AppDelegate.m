@@ -15,7 +15,6 @@
 }
 @property (weak) IBOutlet NSWindow *window;
 @property (nonatomic, strong) id collectionViewFrameChangeObserver;
-@property (nonatomic, strong) NSMutableSet *allIndexPaths;
 @end
 
 #pragma mark -
@@ -32,8 +31,7 @@
     // Note that "self.customLayout" is bound to the collection view's
     // layout. The pointer is to keep it around if we swap it out.
     
-    self.itemCount = @4;
-    self.allIndexPaths = [NSMutableSet set];
+    self.itemCount = @4; // set initial collection size
     
     // determine initial size of items
     NSEdgeInsets insets = [(NSCollectionViewFlowLayout*) self.collectionView.collectionViewLayout sectionInset];
@@ -65,11 +63,7 @@
                                                                  NSLog(@"\nflip w=%0.1f\n", self.collectionView.frame.size.width);
                                                                  
                                                                  [self.collectionView.collectionViewLayout invalidateLayout];
-                                                                 
-                                                                 if (self.useSingleCollectionItemCheckbox.state == NSOnState)
-                                                                     [self.collectionView reloadData];
-                                                                 
-                                                                 //[self.collectionView reloadItemsAtIndexPaths:self.allIndexPaths];
+                                                                 [self.collectionView reloadData];
                                                              }
                                                          }];
 
@@ -132,17 +126,15 @@
 
 - (NSCollectionViewItem *)collectionView:(NSCollectionView *)collectionView itemForRepresentedObjectAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.allIndexPaths addObject:indexPath];
-    
     NSLog(@"mini=%d, path=%@ w=%0.1f", displayMiniItems, indexPath, self.collectionView.frame.size.width);
     
     NSString *identifier;
     NSCollectionViewItem *item;
     
     if (self.useSingleCollectionItemCheckbox.state == NSOnState) {
-        identifier = displayMiniItems ? @"MiniViewItem" : @"LargeViewItem";
-    } else {
         identifier = @"DynamicCollectionViewItem";
+    } else {
+        identifier = displayMiniItems ? @"MiniViewItem" : @"LargeViewItem";
     }
     item = [collectionView makeItemWithIdentifier:identifier
                                      forIndexPath:indexPath];

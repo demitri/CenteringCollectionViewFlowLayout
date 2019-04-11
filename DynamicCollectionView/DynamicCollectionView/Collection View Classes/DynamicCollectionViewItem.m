@@ -22,14 +22,17 @@
     self.miniView.translatesAutoresizingMaskIntoConstraints = NO;
     self.largeView.translatesAutoresizingMaskIntoConstraints = NO;
     
-    self.miniView.backgroundColor = [NSColor blueColor];
-    self.largeView.backgroundColor = [NSColor redColor];
+    // Note: immediately after the view change, connect the 'textField' subview of NSCollectionViewItem to the view we just chose.
 
     // select initial size based on view width
-    if (self.view.frame.size.width < self.largeWidthConstraint.constant)
+    if (self.view.frame.size.width < self.largeWidthConstraint.constant) {
         [self makeDetailView:self.miniView];
-    else
+        self.textField = self.miniViewTextField;
+    }
+    else {
         [self makeDetailView:self.largeView];
+        self.textField = self.largeViewTextField;
+    }
     
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     self.view.postsFrameChangedNotifications = YES;
@@ -48,36 +51,26 @@
                                                              NSLog(@"item flip (w=%.0f)", self.view.frame.size.width);
                                                              
                                                              if (needsMiniView) {
-                                                                 self.miniView.backgroundColor = [NSColor orangeColor];
                                                                  [self makeDetailView:self.miniView];
+                                                                 self.textField = self.miniViewTextField;
                                                              } else {
-                                                                 self.miniView.backgroundColor = [NSColor greenColor];
                                                                  [self makeDetailView:self.largeView];
+                                                                 self.textField = self.largeViewTextField;
                                                              }
 
                                                          }
                                               ];
- 
-    // Since we are swapping the views based on the item size, we can't just bind values directly.
-    // We could set and unset the bindings progamatically, or just observe changes via KVO and update
-    // as appropriate.
-    [self.textField addObserver:self
-                     forKeyPath:@"stringValue"
-                        options:NSKeyValueObservingOptionNew
-                        context:nil];
-
 }
 
 - (void)dealloc
 {
-    // If your app targets iOS 9.0 and later or macOS 10.11 and later,
-    // you don't need to unregister an observer in its dealloc method.
+    // If your app targets iOS 9.0 and later or macOS 10.11 and later, you don't need to unregister an observer in its dealloc method.
     if (floor(NSAppKitVersionNumber) < NSAppKitVersionNumber10_11) {
         if (self.collectionViewFrameChangeObserver)
             [[NSNotificationCenter defaultCenter] removeObserver:self.collectionViewFrameChangeObserver];
     }
     
-    [self removeObserver:self forKeyPath:@"textField.stringValue"];
+    [self removeObserver:self forKeyPath:@"textField"];
 }
 
 - (void)makeDetailView:(NSView*)newView
@@ -100,21 +93,8 @@
                                                           attribute:NSLayoutAttributeCenterX
                                                          multiplier:1.0
                                                            constant:0.0]];
+    
     self.currentDetailView = newView;
-}
-
-#pragma mark -
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context
-{
-    if (object == self.textField) {
-        if ([keyPath isEqualToString:@"stringValue"]) {
-            if (self.currentDetailView == self.largeView)
-                self.largeViewTextField.stringValue = self.textField.stringValue;
-            else
-                self.miniViewTextField.stringValue = self.textField.stringValue;
-        }
-    }
 }
 
 @end

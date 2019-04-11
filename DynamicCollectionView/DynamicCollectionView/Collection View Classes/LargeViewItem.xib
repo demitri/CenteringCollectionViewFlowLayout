@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
+        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,11 +23,14 @@
                 </imageView>
                 <textField wantsLayer="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eqa-dF-g4z">
                     <rect key="frame" x="83" y="84" width="85" height="42"/>
-                    <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="M2X-NG-Ynf">
+                    <textFieldCell key="cell" lineBreakMode="clipping" continuous="YES" title="Label" id="M2X-NG-Ynf">
                         <font key="font" metaFont="system" size="35"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
+                    <connections>
+                        <binding destination="qcf-e8-Qlr" name="value" keyPath="self.textField.stringValue" id="X3C-KZ-iUQ"/>
+                    </connections>
                 </textField>
             </subviews>
             <constraints>
@@ -38,7 +42,7 @@
             </constraints>
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
-                    <color key="value" name="linkColor" catalog="System" colorSpace="catalog"/>
+                    <color key="value" name="systemGrayColor" catalog="System" colorSpace="catalog"/>
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
             <point key="canvasLocation" x="135" y="333"/>
@@ -49,6 +53,7 @@
                 <outlet property="view" destination="TrW-vh-oBh" id="1bf-87-Td2"/>
             </connections>
         </collectionViewItem>
+        <userDefaultsController representsSharedInstance="YES" id="kyl-3a-yOt"/>
     </objects>
     <resources>
         <image name="NSComputer" width="32" height="32"/>
