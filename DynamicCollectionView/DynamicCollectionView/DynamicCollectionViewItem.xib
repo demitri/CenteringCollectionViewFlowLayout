@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <capability name="System colors introduced in macOS 10.13" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView wantsLayer="YES" id="c22-O7-iKe" userLabel="Main View" customClass="ColorView">
+            <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField wantsLayer="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FH0-n0-iGM">
+                    <rect key="frame" x="202" y="128" width="76" height="17"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="placeholder" id="GNf-fX-3OM">
+                        <font key="font" usesAppearanceFont="YES"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="FH0-n0-iGM" firstAttribute="centerY" secondItem="c22-O7-iKe" secondAttribute="centerY" id="Y85-LV-mAE"/>
+                <constraint firstItem="FH0-n0-iGM" firstAttribute="centerX" secondItem="c22-O7-iKe" secondAttribute="centerX" id="vWh-0k-zD5"/>
+            </constraints>
+            <point key="canvasLocation" x="164" y="-63"/>
+        </customView>
+        <collectionViewItem id="AVq-hq-w7h" customClass="MyCollectionViewItem">
+            <connections>
+                <outlet property="largeView" destination="51g-bZ-2Lk" id="4Ph-gX-d2p"/>
+                <outlet property="largeViewTextField" destination="PcL-s7-PAK" id="kPE-4L-4tX"/>
+                <outlet property="largeWidthConstraint" destination="F8F-MJ-47E" id="qUx-Yf-737"/>
+                <outlet property="miniView" destination="ifF-su-riL" id="1Uc-yY-oOD"/>
+                <outlet property="miniViewTextField" destination="sZ4-Hx-88I" id="yp8-Tt-4xO"/>
+                <outlet property="miniWidthConstraint" destination="08m-lv-Pau" id="kfq-DR-gyF"/>
+                <outlet property="textField" destination="sZ4-Hx-88I" id="y1V-6K-z1M"/>
+                <outlet property="view" destination="c22-O7-iKe" id="W4N-Ju-BuY"/>
+            </connections>
+        </collectionViewItem>
+        <customView wantsLayer="YES" id="51g-bZ-2Lk" userLabel="Large View" customClass="ColorView">
+            <rect key="frame" x="0.0" y="0.0" width="250" height="410"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView wantsLayer="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zSx-wQ-fCS">
+                    <rect key="frame" x="0.0" y="160" width="250" height="250"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="250" id="F8F-MJ-47E"/>
+                        <constraint firstAttribute="height" constant="250" id="cgJ-wD-wEm"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="NSComputer" id="BhG-1D-7fH"/>
+                </imageView>
+                <textField wantsLayer="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PcL-s7-PAK">
+                    <rect key="frame" x="83" y="84" width="85" height="42"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="X1n-TX-iyb">
+                        <font key="font" metaFont="system" size="35"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="PcL-s7-PAK" firstAttribute="top" secondItem="zSx-wQ-fCS" secondAttribute="bottom" constant="34" id="Ann-3G-xc7"/>
+                <constraint firstItem="PcL-s7-PAK" firstAttribute="centerX" secondItem="51g-bZ-2Lk" secondAttribute="centerX" id="IjZ-bM-qTk"/>
+                <constraint firstItem="zSx-wQ-fCS" firstAttribute="leading" secondItem="51g-bZ-2Lk" secondAttribute="leading" id="OkR-G5-J8Y"/>
+                <constraint firstAttribute="trailing" secondItem="zSx-wQ-fCS" secondAttribute="trailing" id="YRj-HO-33f"/>
+                <constraint firstItem="zSx-wQ-fCS" firstAttribute="top" secondItem="51g-bZ-2Lk" secondAttribute="top" id="gTQ-5K-n2c"/>
+            </constraints>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                    <color key="value" name="linkColor" catalog="System" colorSpace="catalog"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="135" y="333"/>
+        </customView>
+        <customView wantsLayer="YES" id="ifF-su-riL" userLabel="Mini View" customClass="ColorView">
+            <rect key="frame" x="0.0" y="0.0" width="100" height="218"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView wantsLayer="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2To-aB-qHK">
+                    <rect key="frame" x="0.0" y="118" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="08m-lv-Pau"/>
+                        <constraint firstAttribute="height" constant="100" id="z19-vt-cMM"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="NSComputer" id="Ods-tc-XON"/>
+                </imageView>
+                <textField wantsLayer="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sZ4-Hx-88I">
+                    <rect key="frame" x="32" y="81" width="37" height="17"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="s5q-8N-6H3">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="2To-aB-qHK" firstAttribute="top" secondItem="ifF-su-riL" secondAttribute="top" id="JW5-LI-1Pe"/>
+                <constraint firstItem="sZ4-Hx-88I" firstAttribute="centerX" secondItem="ifF-su-riL" secondAttribute="centerX" id="S4V-ny-7PK"/>
+                <constraint firstAttribute="trailing" secondItem="2To-aB-qHK" secondAttribute="trailing" id="XVq-RS-gbK"/>
+                <constraint firstItem="2To-aB-qHK" firstAttribute="leading" secondItem="ifF-su-riL" secondAttribute="leading" id="ZBc-DP-5N1"/>
+                <constraint firstItem="sZ4-Hx-88I" firstAttribute="top" secondItem="2To-aB-qHK" secondAttribute="bottom" constant="20" id="vQT-QN-7wg"/>
+            </constraints>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                    <color key="value" name="findHighlightColor" catalog="System" colorSpace="catalog"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="495" y="249"/>
+        </customView>
+        <userDefaultsController representsSharedInstance="YES" id="bbf-jZ-EC8"/>
+    </objects>
+    <resources>
+        <image name="NSComputer" width="32" height="32"/>
+    </resources>
+</document>

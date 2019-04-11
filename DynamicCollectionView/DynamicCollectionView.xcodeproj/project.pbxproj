@@ -1,0 +1,346 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A6DC24E9225D744600784D54 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DC24E8225D744600784D54 /* AppDelegate.m */; };
+		A6DC24EB225D744900784D54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6DC24EA225D744900784D54 /* Assets.xcassets */; };
+		A6DC24EE225D744900784D54 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6DC24EC225D744900784D54 /* MainMenu.xib */; };
+		A6DC24F1225D744900784D54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DC24F0225D744900784D54 /* main.m */; };
+		A6DC24FA225D748C00784D54 /* MyCollectionViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DC24F9225D748C00784D54 /* MyCollectionViewItem.m */; };
+		A6DC24FC225D74BB00784D54 /* DynamicCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6DC24FB225D74BB00784D54 /* DynamicCollectionViewItem.xib */; };
+		A6DC24FF225D760A00784D54 /* ColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DC24FE225D760A00784D54 /* ColorView.m */; };
+		A6DC2502225E5CDB00784D54 /* CenteredFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DC2501225E5CDB00784D54 /* CenteredFlowLayout.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A6DC24E4225D744600784D54 /* DynamicCollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicCollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6DC24E7225D744600784D54 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		A6DC24E8225D744600784D54 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		A6DC24EA225D744900784D54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A6DC24ED225D744900784D54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		A6DC24EF225D744900784D54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6DC24F0225D744900784D54 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A6DC24F2225D744900784D54 /* DynamicCollectionView.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DynamicCollectionView.entitlements; sourceTree = "<group>"; };
+		A6DC24F8225D748C00784D54 /* MyCollectionViewItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyCollectionViewItem.h; sourceTree = "<group>"; };
+		A6DC24F9225D748C00784D54 /* MyCollectionViewItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyCollectionViewItem.m; sourceTree = "<group>"; };
+		A6DC24FB225D74BB00784D54 /* DynamicCollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DynamicCollectionViewItem.xib; sourceTree = "<group>"; };
+		A6DC24FD225D760A00784D54 /* ColorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorView.h; sourceTree = "<group>"; };
+		A6DC24FE225D760A00784D54 /* ColorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorView.m; sourceTree = "<group>"; };
+		A6DC2500225E5CDB00784D54 /* CenteredFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CenteredFlowLayout.h; sourceTree = "<group>"; };
+		A6DC2501225E5CDB00784D54 /* CenteredFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CenteredFlowLayout.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A6DC24E1225D744600784D54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A6DC24DB225D744600784D54 = {
+			isa = PBXGroup;
+			children = (
+				A6DC24E6225D744600784D54 /* DynamicCollectionView */,
+				A6DC24E5225D744600784D54 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A6DC24E5225D744600784D54 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A6DC24E4225D744600784D54 /* DynamicCollectionView.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A6DC24E6225D744600784D54 /* DynamicCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				A6DC24E7225D744600784D54 /* AppDelegate.h */,
+				A6DC24E8225D744600784D54 /* AppDelegate.m */,
+				A6DC24EA225D744900784D54 /* Assets.xcassets */,
+				A6DC24EC225D744900784D54 /* MainMenu.xib */,
+				A6DC24F8225D748C00784D54 /* MyCollectionViewItem.h */,
+				A6DC24F9225D748C00784D54 /* MyCollectionViewItem.m */,
+				A6DC24FB225D74BB00784D54 /* DynamicCollectionViewItem.xib */,
+				A6DC24FD225D760A00784D54 /* ColorView.h */,
+				A6DC24FE225D760A00784D54 /* ColorView.m */,
+				A6DC2500225E5CDB00784D54 /* CenteredFlowLayout.h */,
+				A6DC2501225E5CDB00784D54 /* CenteredFlowLayout.m */,
+				A6DC24EF225D744900784D54 /* Info.plist */,
+				A6DC24F0225D744900784D54 /* main.m */,
+				A6DC24F2225D744900784D54 /* DynamicCollectionView.entitlements */,
+			);
+			path = DynamicCollectionView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A6DC24E3225D744600784D54 /* DynamicCollectionView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6DC24F5225D744900784D54 /* Build configuration list for PBXNativeTarget "DynamicCollectionView" */;
+			buildPhases = (
+				A6DC24E0225D744600784D54 /* Sources */,
+				A6DC24E1225D744600784D54 /* Frameworks */,
+				A6DC24E2225D744600784D54 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DynamicCollectionView;
+			productName = DynamicCollectionView;
+			productReference = A6DC24E4225D744600784D54 /* DynamicCollectionView.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A6DC24DC225D744600784D54 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1020;
+				TargetAttributes = {
+					A6DC24E3225D744600784D54 = {
+						CreatedOnToolsVersion = 10.2;
+					};
+				};
+			};
+			buildConfigurationList = A6DC24DF225D744600784D54 /* Build configuration list for PBXProject "DynamicCollectionView" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A6DC24DB225D744600784D54;
+			productRefGroup = A6DC24E5225D744600784D54 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A6DC24E3225D744600784D54 /* DynamicCollectionView */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A6DC24E2225D744600784D54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6DC24EB225D744900784D54 /* Assets.xcassets in Resources */,
+				A6DC24FC225D74BB00784D54 /* DynamicCollectionViewItem.xib in Resources */,
+				A6DC24EE225D744900784D54 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A6DC24E0225D744600784D54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6DC2502225E5CDB00784D54 /* CenteredFlowLayout.m in Sources */,
+				A6DC24FF225D760A00784D54 /* ColorView.m in Sources */,
+				A6DC24F1225D744900784D54 /* main.m in Sources */,
+				A6DC24FA225D748C00784D54 /* MyCollectionViewItem.m in Sources */,
+				A6DC24E9225D744600784D54 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A6DC24EC225D744900784D54 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A6DC24ED225D744900784D54 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A6DC24F3225D744900784D54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		A6DC24F4225D744900784D54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		A6DC24F6225D744900784D54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DynamicCollectionView/DynamicCollectionView.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = DynamicCollectionView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.nightlight.DynamicCollectionView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A6DC24F7225D744900784D54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = DynamicCollectionView/DynamicCollectionView.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = DynamicCollectionView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.nightlight.DynamicCollectionView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A6DC24DF225D744600784D54 /* Build configuration list for PBXProject "DynamicCollectionView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6DC24F3225D744900784D54 /* Debug */,
+				A6DC24F4225D744900784D54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A6DC24F5225D744900784D54 /* Build configuration list for PBXNativeTarget "DynamicCollectionView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6DC24F6225D744900784D54 /* Debug */,
+				A6DC24F7225D744900784D54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A6DC24DC225D744600784D54 /* Project object */;
+}
