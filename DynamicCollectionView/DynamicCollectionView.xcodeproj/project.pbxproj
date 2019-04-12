@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A699C406225FF591004F3C9F /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A699C404225FF591004F3C9F /* Quartz.framework */; };
+		A699C407225FF591004F3C9F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A699C405225FF591004F3C9F /* QuartzCore.framework */; };
 		A6DC24E9225D744600784D54 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6DC24E8225D744600784D54 /* AppDelegate.m */; };
 		A6DC24EB225D744900784D54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6DC24EA225D744900784D54 /* Assets.xcassets */; };
 		A6DC24EE225D744900784D54 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6DC24EC225D744900784D54 /* MainMenu.xib */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A699C404225FF591004F3C9F /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		A699C405225FF591004F3C9F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A6DC24E4225D744600784D54 /* DynamicCollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicCollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6DC24E7225D744600784D54 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A6DC24E8225D744600784D54 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -50,17 +54,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A699C406225FF591004F3C9F /* Quartz.framework in Frameworks */,
+				A699C407225FF591004F3C9F /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A699C403225FF591004F3C9F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A699C404225FF591004F3C9F /* Quartz.framework */,
+				A699C405225FF591004F3C9F /* QuartzCore.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A6DC24DB225D744600784D54 = {
 			isa = PBXGroup;
 			children = (
 				A6DC24E6225D744600784D54 /* DynamicCollectionView */,
 				A6DC24E5225D744600784D54 /* Products */,
+				A699C403225FF591004F3C9F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

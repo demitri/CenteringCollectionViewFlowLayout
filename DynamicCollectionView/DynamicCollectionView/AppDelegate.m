@@ -84,18 +84,26 @@
 
 - (void)defaultLayoutAction:(id)sender
 {
-    //BOOL usingCustomLayout = [self.collectionView.collectionViewLayout isKindOfClass:NSCollectionViewFlowLayout.class];
-    
-    NSButton *checkboxButton = (NSButton*)sender;
+	NSButton *checkboxButton = (NSButton*)sender;
     switch (checkboxButton.state) {
         case NSOnState:
         {
-           // replace layout with NSCollectionViewFlowLayout.class
+           // replace layout with standard NSCollectionViewFlowLayout class
             NSCollectionViewFlowLayout *flowLayout = [[NSCollectionViewFlowLayout alloc] init];
+			
+			// copy settings 
             flowLayout.sectionInset = self.customLayout.sectionInset;
             flowLayout.minimumLineSpacing = self.customLayout.minimumLineSpacing;
             flowLayout.minimumInteritemSpacing = self.customLayout.minimumInteritemSpacing;
-            self.collectionView.collectionViewLayout = flowLayout;
+			
+			NSAnimationContext.currentContext.duration = 1.0; // optional, animate layout change
+			
+			//if (NSAnimationContext.currentContext.duration > 0.0) {
+				self.collectionView.animator.collectionViewLayout = flowLayout;
+			//} else {
+			//	self.collectionView.collectionViewLayout = flowLayout;
+			//}
+			
         }
             break;
 
