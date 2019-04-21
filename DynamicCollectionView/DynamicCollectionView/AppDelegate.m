@@ -37,7 +37,7 @@
     NSEdgeInsets insets = [(NSCollectionViewFlowLayout*) self.collectionView.collectionViewLayout sectionInset];
     displayMiniItems = (self.collectionView.frame.size.width < (LARGE_THUMBNAIL_WIDTH + insets.left + insets.right));
     
-    // watch the frame size to switch to mini view when then width gets narrow
+    // watch the frame size to switch to mini view when the width gets narrow
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     self.collectionView.postsFrameChangedNotifications = YES;
     self.collectionViewFrameChangeObserver = [nc addObserverForName:NSViewFrameDidChangeNotification
