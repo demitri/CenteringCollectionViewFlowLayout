@@ -107,19 +107,24 @@
     NSArray *attributes = [super layoutAttributesForElementsInRect:rect];
     if (attributes.count == 0)
         return attributes;
-    
+	
+	// If modifying, must return copies of attribute objects, not the originals modified
+	NSMutableArray *newAttributes = [NSMutableArray array];
+	
     //CGFloat inset = self.sectionInset.left;
     
     for (NSCollectionViewLayoutAttributes *attr in attributes) {
+		NSCollectionViewLayoutAttributes *newAttr = [attr copy];
         NSUInteger col = [self columnForIndexPath:attr.indexPath]; // column number
         NSRect newFrame = NSMakeRect(floor((col * itemWidth) + gridSpacing * (1 + col)),
                                      attr.frame.origin.y,
                                      attr.frame.size.width,
                                      attr.frame.size.height);
-        attr.frame = newFrame;
+        newAttr.frame = newFrame;
+		[newAttributes addObject:newAttr];
     }
     
-    return attributes;
+    return newAttributes;
 }
 
 - (NSCollectionViewLayoutAttributes*)layoutAttributesForInterItemGapBeforeIndexPath:(NSIndexPath *)indexPath
