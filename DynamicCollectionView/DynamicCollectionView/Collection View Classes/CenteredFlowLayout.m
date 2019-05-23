@@ -7,6 +7,7 @@
 #import "CenteredFlowLayout.h"
 #import <math.h>
 
+/*
 @interface CenteredFlowLayout()
 {
     CGFloat itemWidth;   // wdith of item; assuming all items have the same width
@@ -16,17 +17,30 @@
 }
 - (NSUInteger)columnForIndexPath:(NSIndexPath*)indexPath;
 @end
+*/
 
 #pragma mark -
 
 @implementation CenteredFlowLayout
 
+{
+    CGFloat itemWidth;   // wdith of item; assuming all items have the same width
+    NSUInteger nColumns; // number of possible columns based on item width and section insets
+    CGFloat gridSpacing; // after even distribution, space between each item and edges (if row full)
+    NSUInteger itemCount;
+}
+
 - (void)prepareLayout
 {
     [super prepareLayout];
 
+    __auto_type delegate = (id<NSCollectionViewDelegateFlowLayout,NSCollectionViewDataSource>)self.collectionView.delegate;
+    __auto_type cv = self.collectionView;
+
+    /* same as:
     id<NSCollectionViewDelegateFlowLayout,NSCollectionViewDataSource> delegate = (id<NSCollectionViewDelegateFlowLayout,NSCollectionViewDataSource>)self.collectionView.delegate;
     NSCollectionView *cv = self.collectionView;
+     */
     
     if ([delegate collectionView:cv numberOfItemsInSection:0] == 0)
         return;
@@ -110,7 +124,7 @@
 
 - (NSCollectionViewLayoutAttributes*)layoutAttributesForInterItemGapBeforeIndexPath:(NSIndexPath *)indexPath
 {
-    // Though to try to just modify this, but this method not normally called
+    // Thought to try to just modify this, but this method not normally called
     // (maybe for drag/drop?).
     NSCollectionViewLayoutAttributes *attributes = [super layoutAttributesForInterItemGapBeforeIndexPath:indexPath];
     return attributes;
