@@ -28,6 +28,8 @@
     NSUInteger nColumns; // number of possible columns based on item width and section insets
     CGFloat gridSpacing; // after even distribution, space between each item and edges (if row full)
     NSUInteger itemCount;
+	
+	NSMutableDictionary<NSIndexPath*, NSCollectionViewLayoutAttributes*>  *preAnimationBounds;
 }
 
 - (void)prepareLayout
@@ -85,7 +87,30 @@
     gridSpacing = floor(totalWhitespace/(nColumns+1));  // e.g.:   |  [x]  [x]  |
     //gridSpacing = MAX(gridSpacing, MAX(self.sectionInset.left,self.sectionInset.right));
     
-    NSLog(@"gridSpacing = %d", (int)gridSpacing);
+    //NSLog(@"gridSpacing = %d", (int)gridSpacing);
+}
+
+- (void)prepareForAnimatedBoundsChange:(NSRect)oldBounds
+{
+	// From the docs:
+	// The collection view calls this method before performing any animated changes to the collection view’s bounds. It also calls this method before the animated insertion or deletion of items. Subclasses can use this method to perform any calculations needed to prepare fodr animated changes. Specifically, you might use this method to calculate the initial or final positions of inserted or deleted items so that you can return those values when asked for them.
+	
+	// I CAN'T SEE ANY SITUATION IN THIS APP WHERE THIS IS CALLED, EVEN WHEN CHANGING ITEM COUNTS
+	
+	for (NSCollectionViewLayoutAttributes* attributes in [self layoutAttributesForElementsInRect:oldBounds]) {
+		preAnimationBounds[[attributes.indexPath copy]] = [attributes copy];
+	}
+}
+
+- (void)prepareForCollectionViewUpdates:(NSArray<NSCollectionViewUpdateItem *> *)updateItems
+{
+	// I CAN'T SEE ANY SITUATION IN THIS APP WHERE THIS IS CALLED, EVEN WHEN CHANGING ITEM COUNTS
+
+	[super prepareForCollectionViewUpdates:updateItems];
+	
+	for (NSCollectionViewUpdateItem *item in updateItems) {
+		NSLog(@"updated item: %@", item);
+	}
 }
 
 - (NSUInteger)columnForIndexPath:(NSIndexPath*)indexPath

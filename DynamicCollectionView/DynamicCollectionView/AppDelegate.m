@@ -62,8 +62,7 @@
                                                                  
                                                                  NSLog(@"\nflip w=%0.1f\n", self.collectionView.frame.size.width);
                                                                  
-                                                                 [self.collectionView.collectionViewLayout invalidateLayout];
-                                                                 [self.collectionView reloadData];
+																[self.collectionView reloadData]; // call to trigger the loading of the new sizes
                                                              }
                                                          }];
 
