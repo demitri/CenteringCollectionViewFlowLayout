@@ -24,10 +24,12 @@
 @implementation CenteredFlowLayout
 
 {
-    CGFloat itemWidth;   // wdith of item; assuming all items have the same width
-    NSUInteger nColumns; // number of possible columns based on item width and section insets
-    CGFloat gridSpacing; // after even distribution, space between each item and edges (if row full)
+    //CGFloat itemWidth;  // wdith of item; assuming all items have the same width
+	NSSize itemSize;	  // size of the collection view item; assuming all items have the same size
+    NSUInteger nColumns;  // number of possible columns based on item width and section insets
+    CGFloat gridSpacing;  // after even distribution, space between each item and edges (if row full)
     NSUInteger itemCount;
+	NSEdgeInsets insets;  // section insets might be from delegate method or property (see below)
 	
 	NSMutableDictionary<NSIndexPath*, NSCollectionViewLayoutAttributes*>  *preAnimationBounds;
 }
@@ -55,20 +57,20 @@
     // Get the attributes returned by NSCollectionViewFlowLayout, not our method override.
     NSUInteger indices[] = {0,0};
     NSCollectionViewLayoutAttributes *attr = [super layoutAttributesForItemAtIndexPath:[NSIndexPath indexPathWithIndexes:indices length:2]];
-    itemWidth = attr.size.width;
+	itemSize = attr.size;
     
-    NSEdgeInsets insets;
+    //NSEdgeInsets insets;
     if ([delegate respondsToSelector:@selector(collectionView:layout:insetForSectionAtIndex:)])
         insets = [delegate collectionView:cv layout:self insetForSectionAtIndex:0];
     else
         insets = self.sectionInset;
 
     // calculate the number of columns that can fit excluding minimumInteritemSpacing:
-    nColumns = floor((cv.frame.size.width - insets.left - insets.right) / itemWidth);
+    nColumns = floor((cv.frame.size.width - insets.left - insets.right) / itemSize.width);
     // is there enough space for minimumInteritemSpacing?
     while ((cv.frame.size.width
             - insets.left - insets.right
-            - (nColumns*itemWidth)
+            - (nColumns*itemSize.width)
             - (nColumns-1)*self.minimumInteritemSpacing) < 0) {
         if (nColumns == 1)
             break;
@@ -83,7 +85,7 @@
     // For a centered layout, all spacing (left inset, right inset, space between items) is equal
     // unless a row has fewer items than columns (but they are still aligned with that grid).
     //
-    CGFloat totalWhitespace = cv.bounds.size.width - (nColumns * itemWidth);
+    CGFloat totalWhitespace = cv.bounds.size.width - (nColumns * itemSize.width);
     gridSpacing = floor(totalWhitespace/(nColumns+1));  // e.g.:   |  [x]  [x]  |
     //gridSpacing = MAX(gridSpacing, MAX(self.sectionInset.left,self.sectionInset.right));
     
@@ -136,13 +138,21 @@
 	// If modifying, must return copies of attribute objects, not the originals modified
 	NSMutableArray *newAttributes = [NSMutableArray array];
 	
-    //CGFloat inset = self.sectionInset.left;
-    
+	CGFloat interitemSpacing = self.minimumInteritemSpacing;
+
+	// Note: becuase of the use of floor() in the calcualtion of the gridSpacing (above), there can
+	// be a discrepancy when the width of the view is within a few pixels of the width between a
+	// different number of rows. In principle there shouldn't be a difference between the
+	// default layout and this layout expcet for the frame origin x values, but in practice there were edge
+	// cases that broke. For this reason, the frame origin y values are also calculated below.
+	// This seems to have addressed the problem.
+	
     for (NSCollectionViewLayoutAttributes *attr in attributes) {
 		NSCollectionViewLayoutAttributes *newAttr = [attr copy];
         NSUInteger col = [self columnForIndexPath:attr.indexPath]; // column number
-        NSRect newFrame = NSMakeRect(floor((col * itemWidth) + gridSpacing * (1 + col)),
-                                     attr.frame.origin.y,
+		NSUInteger row = (NSUInteger)floor([attr.indexPath indexAtPosition:1]/nColumns); // expected row number
+        NSRect newFrame = NSMakeRect(floor((col * itemSize.width) + gridSpacing * (1 + col)),
+                                     insets.top + (itemSize.height * row) + (interitemSpacing * row), //attr.frame.origin.y,
                                      attr.frame.size.width,
                                      attr.frame.size.height);
         newAttr.frame = newFrame;
@@ -162,12 +172,7 @@
 
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(NSRect)newBounds
 {
-    return YES;
-    
-    // Would have thought to only return YES when the width changes (in a flow layout),
-    // but only returning "YES" works.
-    //CGRect oldBounds = self.collectionView.bounds;
-    //return CGRectGetWidth(newBounds) != CGRectGetWidth(oldBounds);
+	return YES;
 }
 
 @end
