@@ -131,9 +131,13 @@
     if (nColumns == 0) // prepareLayout not yet called
         return [super layoutAttributesForElementsInRect:rect];
     
-    NSArray *attributes = [super layoutAttributesForElementsInRect:rect];
-    if (attributes.count == 0)
-        return attributes;
+    // if there's only one item, it actually looks more weird to have it flow centered in all that space
+    if ([self.collectionView numberOfItemsInSection:0] == 1)
+        return [super layoutAttributesForElementsInRect:rect];
+
+    NSArray *defaultAttributes = [super layoutAttributesForElementsInRect:rect];
+    if (defaultAttributes.count == 0)
+        return defaultAttributes;
 	
 	// If modifying, must return copies of attribute objects, not the originals modified
 	NSMutableArray *newAttributes = [NSMutableArray array];
@@ -147,18 +151,17 @@
 	// cases that broke. For this reason, the frame origin y values are also calculated below.
 	// This seems to have addressed the problem.
 	
-    for (NSCollectionViewLayoutAttributes *attr in attributes) {
-		NSCollectionViewLayoutAttributes *newAttr = [attr copy];
-        NSUInteger col = [self columnForIndexPath:attr.indexPath]; // column number
-		NSUInteger row = (NSUInteger)floor([attr.indexPath indexAtPosition:1]/nColumns); // expected row number
+    for (NSCollectionViewLayoutAttributes *defaultAttribute in defaultAttributes) {
+		NSCollectionViewLayoutAttributes *newAttr = [defaultAttribute copy];
+        NSUInteger col = [self columnForIndexPath:newAttr.indexPath]; // column number
+		NSUInteger row = (NSUInteger)floor([newAttr.indexPath indexAtPosition:1]/nColumns); // expected row number
         NSRect newFrame = NSMakeRect(floor((col * itemSize.width) + gridSpacing * (1 + col)),
                                      insets.top + (itemSize.height * row) + (interitemSpacing * row), //attr.frame.origin.y,
-                                     attr.frame.size.width,
-                                     attr.frame.size.height);
+                                     newAttr.frame.size.width,
+                                     newAttr.frame.size.height);
         newAttr.frame = newFrame;
 		[newAttributes addObject:newAttr];
     }
-    
     return newAttributes;
 }
 
