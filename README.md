@@ -41,7 +41,7 @@ Tick this box to toggle between the default `NSCollectionViewFlowLayout` and the
 The dynamic sizing between the large and small item can be implemented in at least two ways, and this application demonstrates both. 
 
  * Use two independent subclasses of `NSCollectionViewItem` and have the code return one or the other.
- * Define both views in a single `NSCollectionViewItem", and swap the views as needed.
+ * Define both views in a single `NSCollectionViewItem`, and swap the views as needed.
  
  There are advantages to each approach.
 
